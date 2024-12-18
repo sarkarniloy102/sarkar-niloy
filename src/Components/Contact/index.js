@@ -61,7 +61,7 @@ const ContactForm = styled.form`
   display: flex;
   flex-direction: column;
   background-color: ${({ theme }) => theme.card};
-  padding: 32px;
+  padding: 25px;
   border-radius: 16px;
   box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
   margin-top: 28px;
@@ -88,6 +88,10 @@ const ContactInput = styled.input`
     border: 1px solid ${({ theme }) => theme.primary};
   }
 `
+const ContactFlex = styled.div`
+display: flex;
+gap:5px;
+align-item:center`
 
 const ContactInputMessage = styled.textarea`
   flex: 1;
@@ -118,6 +122,7 @@ const ContactButton = styled.input`
   color: ${({ theme }) => theme.text_primary};
   font-size: 18px;
   font-weight: 600;
+  cursor: pointer;
 `
 
 
@@ -130,7 +135,7 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    emailjs.sendForm('service_5g3i11k', 'template_u66ot0a', form.current, 'hFTPExiXh3ugv2gVt')
+    emailjs.sendForm('service_5g3i11k', 'template_dgrbg82', form.current, 'hFTPExiXh3ugv2gVt')
       .then((result) => {
         setOpen(true);
         form.current.reset();
@@ -148,10 +153,13 @@ const Contact = () => {
         <Desc>Feel free to reach out to me for any questions or opportunities!</Desc>
         <ContactForm ref={form} onSubmit={handleSubmit}>
           <ContactTitle>Email Me 🚀</ContactTitle>
-          <ContactInput placeholder="Your Email" name="from_email" />
-          <ContactInput placeholder="Your Name" name="from_name" />
-          <ContactInput placeholder="Subject" name="subject" />
-          <ContactInputMessage placeholder="Message" rows="4" name="message" />
+         <ContactFlex>
+         <ContactInput placeholder="Your Email" required name="from_email" />
+         <ContactInput placeholder="Your Name" required name="from_name" />
+         </ContactFlex>
+         
+          <ContactInput placeholder="Subject" required name="subject" />
+          <ContactInputMessage placeholder="Message" required rows="4" name="message" />
           <ContactButton type="submit" value="Send" />
         </ContactForm>
         <Snackbar

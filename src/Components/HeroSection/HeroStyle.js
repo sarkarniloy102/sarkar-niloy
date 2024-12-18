@@ -28,7 +28,7 @@ export const HeroBg = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  max-width: 1360px;
+  max-width: 1500px;
   overflow: hidden;
   padding: 0 30px;
   top: 50%;
@@ -48,7 +48,7 @@ export const HeroInnerContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 1100px;
+  max-width: 1250px;
 
   @media (max-width: 960px) {
     flex-direction: column;
