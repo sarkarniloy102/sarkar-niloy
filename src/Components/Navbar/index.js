@@ -3,7 +3,7 @@ import { Nav, NavLink, NavbarContainer, NavLogo, NavItems, GitHubButton, ButtonC
 import { DiCssdeck } from 'react-icons/di';
 import { FaBars } from 'react-icons/fa';
 import { Bio } from '../../Data/Alldata';
-import { Close, CloseRounded } from '@mui/icons-material';
+// import { Close, CloseRounded } from '@mui/icons-material';
 import { useTheme } from 'styled-components';
 
 const Navbar = () => {
@@ -13,7 +13,7 @@ const Navbar = () => {
         <Nav>
             <NavbarContainer>
                 <NavLogo to='/'>
-                    <a style={{ display: "flex", alignItems: "center", color: "white", marginBottom: '20;', cursor: 'pointer' }}>
+                    <a href='/'  style={{ display: "flex", alignItems: "center", color: "white", marginBottom: '20;', cursor: 'pointer',underline:'none' }}>
                         <DiCssdeck size="3rem" /> <Span>Portfolio</Span>
                     </a>
                 </NavLogo>
